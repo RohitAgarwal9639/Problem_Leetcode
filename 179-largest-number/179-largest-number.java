@@ -9,11 +9,9 @@ class Solution {
             String s2 = b + "" + b;
             return s2.compareTo(s1);
         });
-        System.out.println(Arrays.toString(arr));
         
         StringBuilder sb = new StringBuilder();
         for(String ele : arr){
-            System.out.println(ele);
             sb.append(ele);
         } 
         
