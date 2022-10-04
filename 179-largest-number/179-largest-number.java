@@ -5,14 +5,16 @@ class Solution {
         for(int ele : nums) arr[idx++] = ele + "";
         
         Arrays.sort(arr, (a, b)-> {
-            String s1 = a + "" + b;
-            String s2 = b + "" + b;
-            return s2.compareTo(s1);
+            long s1 = Long.parseLong(a+b);
+            long s2 = Long.parseLong(b+a);
+            if(s1>s2) return 1;
+            else if(s1<s2) return -1;
+            else return 0;
         });
         
         StringBuilder sb = new StringBuilder();
-        for(String ele : arr){
-            sb.append(ele);
+        for(int i=arr.length-1;i>=0;i--){
+            sb.append(arr[i]);
         } 
         
         if(sb.charAt(0) == '0') return "0";
